@@ -1,8 +1,12 @@
 import { Hono } from "hono";
 import { HTTPException } from "hono/http-exception";
 import { apiController } from "./controllers/api.js";
+// import { cors } from "hono/cors";
 
 export const app = new Hono();
+
+// // CORS
+// app.use(cors());
 
 app.route("/api", apiController);
 
