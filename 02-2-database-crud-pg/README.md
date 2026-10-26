@@ -107,6 +107,18 @@ Content-Type: application/json
 
 `publishedYear` is optional and may be `null`. Zod rejects unknown properties and invalid types before controller handlers run.
 
+### Students
+
+| Method | Path | Description |
+| --- | --- | --- |
+| `GET` | `/api/v1/students` | List students |
+| `GET` | `/api/v1/students/:studentId` | Get a student |
+| `POST` | `/api/v1/students` | Create a student |
+| `PATCH` | `/api/v1/students/:studentId` | Update supplied student fields |
+| `DELETE` | `/api/v1/students/:studentId` | Delete a student |
+
+Body: `firstName`, `lastName`, `studentCode` (unique, 409 if duplicate), `birthDate` (`YYYY-MM-DD`), `gender` (`male` | `female` | `other`).
+
 ## Example request
 
 ```sh
